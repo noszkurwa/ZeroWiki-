@@ -1,0 +1,17 @@
+{
+ "address": "1QumAtxn5MrGEmpRBdzD6rMBMTBBXLWg7",
+ "cert_auth_type": "web",
+ "cert_sign": "HNzEuqKX7Zu6yc3lhfXn/ULLYf11bTLC72ZlnH/pzkEEX9/HYFgzKP+lS+DBK3XSGOhHwAFovUzCVQKRRVj4UDU=",
+ "cert_user_id": "klempa@zeroid.bit",
+ "files": {
+  "data.json": {
+   "sha512": "932edb09dc710e80144646679cdf409c8790b448d1f5e80f767e1d5ab8c2d83c",
+   "size": 55945
+  }
+ },
+ "inner_path": "data/users/1JZ8pyPNPtaH5pdLNzcifFLoBppBZj3SaC/content.json",
+ "modified": 1615388484,
+ "signs": {
+  "1JZ8pyPNPtaH5pdLNzcifFLoBppBZj3SaC": "G57jS6+JIZ4v1+bG51xzALbVhddNKK1BDAD2EWqHrMStTttLHi2hwWVzPoZDhycF/PId7vu0ACWtfIl3/4iNegU="
+ }
+}
