@@ -2,7 +2,7 @@
 
 /* ---- /138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/js/libs/ZeroFrame.coffee ---- */
 
-
+/*test */
 (function() {
   var ZeroFrame,
     bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -126,14 +126,14 @@
  * https://github.com/chjj/marked
  */
 (function() {
-  var block = {
+ var block = {
     newline: /^\n+/,
     code: /^( {4}[^\n]+\n*)+/,
     fences: noop,
-    hr: /^( *[-*_]){3,} *(?:\n+|$)/,
-    heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,
+    hr: /^( *[-*-]){3,} *(?:\n+|$)/,
+    heading: /^ *(={1,6})*([^\n]+?) *=* *(?:\n+|$)/,
     nptable: noop,
-    lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
+    lheading: /^([^\n]+)\n *(=|=){2,} *(?:\n+|$)/,
     blockquote: /^( *>[^\n]+(\n(?!def)[^\n]+)*\n*)+/,
     list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
     html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
@@ -144,7 +144,7 @@
     
   };
   block.bullet = /(?:[*+-]|\d+\.)/;
-  block.item = /^( *)(bull) [^\n]*(?:\n(?!\1bull )[^\n]*)*/;
+  block.item = /^( *){1,}(bull)? [^\n?]*(?:\n(?!\1bull )[^\n]*)*/;
   block.item = replace(block.item, "gm")(/bull/g, block.bullet)();
   block.list = replace(block.list)(/bull/g, block.bullet)("hr", "\\n+(?=\\1?(?:[-*_] *){3,}(?:\\n+|$))")("def", "\\n+(?=" + block.def.source + ")")();
   block.blockquote = replace(block.blockquote)("def", block.def)();
@@ -155,8 +155,9 @@
   block.gfm = merge({}, block.normal, {
     fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]*?)\s*\1 *(?:\n+|$)/,
     paragraph: /^/,
-    heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/
+    heading: /^ *(={1,6})+([^\n]+?) *=* *(?:\n+|$)/
   });
+ 
   block.gfm.paragraph = replace(block.paragraph)("(?!", "(?!" + block.gfm.fences.source.replace("\\1", "\\2") + "|" + block.list.source.replace("\\1", "\\3") + "|")();
   block.tables = merge({}, block.gfm, {
     nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,
